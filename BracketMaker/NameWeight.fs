@@ -41,7 +41,7 @@ module NameWeight =
         | None -> 0.0
 
     // For a given name, queries Wolfram Alpha for the name frequencies for that name in the US
-    let asyncGetNameFrequency (name  : String) = 
+    let getNameFrequency (name  : String) = 
         let baseUrl = "http://api.wolframalpha.com/v2/query?input="
         let apiKeySection = "&appid=QYJPEA-G6QWXLRGJA"
         let finalUrl = String.Format("{0}{1}{2}", baseUrl, name, apiKeySection).Replace(" ", "%20")
@@ -54,7 +54,7 @@ module NameWeight =
 
     // Averages the frequencies of the players in a team.
     let getTeamWeight (players : seq<string>) =
-        let weight = Async.Parallel [ for player in players -> async { return asyncGetNameFrequency player}] |> Async.RunSynchronously |> Seq.average
+        let weight = Async.Parallel [ for player in players -> async { return getNameFrequency player}] |> Async.RunSynchronously |> Seq.average
         weight
 
     // Entry point - reads in the xml file and requests weights.
