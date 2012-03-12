@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<team name="Duke">
+<team name="Duke" div="South">
   <player name="Austin Rivers" />
   <player name="Quinn Cook" />
   <player name="Tyler Thornton" />
@@ -14,4 +14,3 @@
   <player name="Marshall Plumlee" />
   <player name="Todd Zafirovski" />
 </team>
-
