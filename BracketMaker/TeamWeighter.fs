@@ -58,19 +58,13 @@ let getTeamWeight (players : seq<string>) =
 
 // Entry point - reads in the xml file and requests weights.
 let getTeamWeightsAsync =
-    let startAsync = DateTime.Now
     let teamList = getTeamLists
     let teamWeights = Async.Parallel [ for (teamName, players) in teamList -> async {return teamName, getTeamWeight players }] |> Async.RunSynchronously
-    let endAsync = DateTime.Now
-    Console.WriteLine("Aync took {0}", endAsync.Subtract(startAsync))
     teamWeights
 
 let getTeamWeights =
-    let startSync = DateTime.Now
     let teamList = getTeamLists
     let teamWeights = seq { for (teamName, players) in teamList -> teamName, getTeamWeight players }
-    let endSync = DateTime.Now
-    Console.WriteLine("Sync took {0}", endSync.Subtract(startSync))
     teamWeights
 
 
