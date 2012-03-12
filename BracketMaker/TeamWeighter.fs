@@ -1,5 +1,8 @@
 ﻿#light
 
+// JARGON
+// Pod - A container for a specific type of data in a Wolfram Alpha query response.  Pods have titles and describe their content, though we only want a certain type of pod.
+
 open System
 open System.Net
 open System.Xml
@@ -21,11 +24,13 @@ let getTeamLists =
     let teamMaps = seq { for node in teamNodes -> (node.Attribute(xName "name").Value, getPlayerList (node.Elements(xName "player"))) }
     teamMaps
 
+// Helper method to read the Birth rate info in the target Pod
 let parsePodValue (pod : XElement) = 
     let start = pod.Value.IndexOf("(")+1
     let parenEnd = pod.Value.IndexOf(")")
     Convert.ToDouble(pod.Value.Substring(start,  parenEnd-start-1))
 
+// Parses the WA xml to get the frequency value
 let getNameValue (xDoc : XDocument) =
     let query = xDoc.Element(xName "queryresult")
     let pods = query.Elements( xName "pod")
@@ -35,6 +40,7 @@ let getNameValue (xDoc : XDocument) =
     | Some(targetPod) -> parsePodValue targetPod
     | None -> 0.0
 
+// For a given name, queries Wolfram Alpha for the name frequencies for that name in the US
 let getNameFrequency (name  : String) =
     let baseUrl = "http://api.wolframalpha.com/v2/query?input="
     let apiKeySection = "&appid=QYJPEA-G6QWXLRGJA"
@@ -45,11 +51,12 @@ let getNameFrequency (name  : String) =
     getDoc reader 
     |> getNameValue
 
-    
+// Averages the frequencies of the players in a team.
 let getTeamWeight (players : seq<string>) =
     let weight = players |> Seq.map (fun x -> getNameFrequency x) |> Seq.average
     weight
 
+// Entry point - reads in the xml file and requests weights.
 let getTeamWeightsAsync =
     let startAsync = DateTime.Now
     let teamList = getTeamLists
@@ -67,7 +74,8 @@ let getTeamWeights =
     teamWeights
 
 
-let weights = getTeamWeights
+//let weights = getTeamWeights
 let weightsAsync = getTeamWeightsAsync
-printfn "%A" weights
+//printfn "%A" weights
+printfn "%A" weightsAsync
 Console.ReadLine() |> ignore
