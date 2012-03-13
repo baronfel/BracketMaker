@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="NameWeight.fs" />
     <Compile Include="Team.fs" />
+    <Compile Include="Match.fs" />
     <Content Include="TeamRosters.xml" />
     <None Include="packages.config" />
     <Compile Include="RosterGenerator.fs" />
