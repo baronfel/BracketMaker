@@ -41,7 +41,7 @@ module NameWeight =
 
     // For a given name, queries Wolfram Alpha for the name frequencies for that name in the US
     let getNameFrequency (name  : String) = 
-        printfn "Getting name weight for player %s" name
+        //printfn "Getting name weight for player %s" name
         let baseUrl = "http://api.wolframalpha.com/v2/query?input="
         let apiKeySection = "&appid=QYJPEA-G6QWXLRGJA"
         let finalUrl = String.Format("{0}{1}{2}", baseUrl, name, apiKeySection).Replace(" ", "%20")

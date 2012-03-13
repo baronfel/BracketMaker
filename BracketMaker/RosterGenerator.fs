@@ -18,6 +18,6 @@ module RosterGenerator =
     let getTeamLists =
         let teamXDoc = XDocument.Load "..\..\TeamRosters.xml"
         let teamNodes = teamXDoc.Descendants(xName "team")
-        let teamMaps = seq { for node in teamNodes -> new Team(node.Attribute(xName "name").Value, node.Attribute(xName "div").Value, getPlayerList node.Value) }
+        let teamMaps = seq { for node in teamNodes -> new Team(node.Attribute(xName "name").Value, node.Attribute(xName "div").Value, getPlayerList node.Value, NameWeight.getTeamWeight (getPlayerList node.Value)) }
         teamMaps
 

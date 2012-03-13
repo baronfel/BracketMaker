@@ -41,9 +41,9 @@
     <Compile Include="Team.fs" />
     <Compile Include="Match.fs" />
     <Content Include="TeamRosters.xml" />
-    <None Include="packages.config" />
     <Compile Include="RosterGenerator.fs" />
     <Compile Include="BracketMaker.fs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="HtmlAgilityPack">
