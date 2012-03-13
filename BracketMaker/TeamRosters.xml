@@ -1,16 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<team name="Duke" div="South">
-  <player name="Austin Rivers" />
-  <player name="Quinn Cook" />
-  <player name="Tyler Thornton" />
-  <player name="MasonPlumlee" />
-  <player name="Alex Murphy" />
-  <player name="Michael Gbinje" />
-  <player name="Josh Hairston" />
-  <player name="Andre Dawkins" />
-  <player name="Miles Plumlee" />
-  <player name="Seth Curry" />
-  <player name="Ryan Kelly" />
-  <player name="Marshall Plumlee" />
-  <player name="Todd Zafirovski" />
-</team>
+<teams>
+  <team name="Duke" div="South">Austin Rivers
+    Quinn Cook
+    Tyler Thornton
+    MasonPlumlee
+    Alex Murphy
+    Michael Gbinje
+    Josh Hairston
+    Andre Dawkins
+    Miles Plumlee
+    Seth Curry
+    Ryan Kelly
+    Marshall Plumlee
+    Todd Zafirovski</team>
+  <team name="Kentucky" div="South">Twany Beckham
+    Anthony Davis
+    Ryan Harrow
+    Jon Hood
+    Terrence Jones
+    Michael Kidd-Gilchrist
+    Doron Lamb
+    Brian Long
+    Sam Malone
+    Darius Miller
+    Jarrod Polson
+    Stacey Poole Jr.
+    Marquis Teague
+    Eloy Vargas
+    Kyle Wiltjer</team>
+  <team name="Mississippi Valley" div="South">William Pugh
+    Terrence Joyner
+    Luka Pajkovic
+    Brent Arrington
+    Amos Studivant
+    Cor-J Cox
+    Falando Jones
+    Kevin Burwell
+    Paul Crosby
+    Blake Ralling</team>
+  <team name="Western Kentucky" div="South">Kene Anyigbo
+    Kevin Kaspar
+    Kahlil McDonald
+    Derrick Gordon
+    Caden Dickerson
+    Spence Sheldon
+    Jamal Crook
+    O'Karo Akamune
+    Nigel Snipes
+    Teeng Akol
+    Stephon Drane
+    Jay Starks
+    Vinny Zollo
+    George Fant
+    T.J. Price</team>
+  <team name="Iowa State" div="South">Jordan Railey
+    Bubu Palo
+    Chris Babb
+    Melvin Ejim
+    Chris Allen
+    Tavon Sledge
+    Scott Christopherson
+    Austin McBeth
+    Anthony Booker
+    Percy Gibson
+    Tyrus McGee
+    Royce White</team>
+  <team name="Connecticut" div="South">Enosch Wolf
+    DeAndre Daniels
+    Jeremy Lamb
+    Brendan Allen
+    Niels Giffey
+    Tyler Olander
+    Ryan Boatright
+    Andre Drummond
+    Shabazz Napier
+    P.J. Cochrane
+    Kyle Bailey
+    Roscoe Smith
+    Benjamin Stewart
+    Michael Bradley
+    Alex Oriakhi
+    Ethan Waite</team>
+</teams>

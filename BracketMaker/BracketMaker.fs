@@ -5,10 +5,8 @@ namespace BracketMaker
 open NameWeight
 open System
 
-module BracketMaker =
+module Program =
 
-    let weights = NameWeight.getTeamWeightsAsync BracketMaker.RosterGenerator.getTeamLists
-    printfn "%A" weights
+    let weights = Async.Parallel [ for team in BracketMaker.RosterGenerator.getTeamLists -> async { return team, team.getWeight() } ] |> Async.RunSynchronously |> Array.toSeq
+    weights |> Seq.iter( fun (a, b) -> printfn "%s - %e" a.Name b)
     Console.ReadKey() |> ignore
-
-
