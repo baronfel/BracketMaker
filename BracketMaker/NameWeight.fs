@@ -10,6 +10,7 @@ open System.Net
 open System.Xml
 open System.IO
 open System.Xml.Linq
+open Player
 
 module NameWeight = 
 
@@ -53,6 +54,6 @@ module NameWeight =
         |> getNameValue
 
     // Averages the frequencies of the players in a team.
-    let getTeamWeight (players : seq<string>) =
-        let weight = Async.Parallel [ for player in players -> async { return getNameFrequency player}] |> Async.RunSynchronously |> Seq.average
+    let getTeamWeight (players : seq<Player>) =
+        let weight = Async.Parallel [ for player in players -> async { return getNameFrequency player.Name}] |> Async.RunSynchronously |> Seq.average
         weight

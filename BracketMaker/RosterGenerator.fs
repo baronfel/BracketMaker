@@ -7,13 +7,14 @@ open System.Net
 open System.Xml
 open System
 open Team
+open Player
 
 module RosterGenerator =
 
     let xName value = XName.Get value
 
     let getPlayerList (players: string) =
-        players.Split '\n' |> Array.toSeq |> Seq.filter( fun x -> x.Length > 0)
+        players.Split '\n' |> Array.toSeq |> Seq.filter( fun x -> x.Length > 0) |> Seq.map(fun x -> new Player(x, "", [("" , 0.0)]))
 
     let getTeamLists =
         let teamXDoc = XDocument.Load "..\..\TeamRosters.xml"
