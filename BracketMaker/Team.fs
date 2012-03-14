@@ -1,8 +1,11 @@
 ﻿#light
 namespace BracketMaker
+
+open Player
+
 module Team =
 
-    type Team(name : string, division : string, players : seq<string>, weight : float) = 
+    type Team(name : string, division : string, players : seq<Player>, weight : float) = 
         
         let name = name
         let division = division
